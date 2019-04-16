@@ -18,11 +18,12 @@ function h(p){
 
     var option = {
       title: {
-        text: '二进熵函数曲线'
-
+        text: '二进熵函数曲线',  // 大标题
+        subtext: '',    // 类似于副标题
+        x: 'center'   // 标题位置 居中
       },
       tooltip: {},
-      legend: {
+      legend: { // 图例组件
         data:['二进熵']
 
       },
