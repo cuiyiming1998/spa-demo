@@ -14,7 +14,7 @@ $(function(){
   },1000);
 
   $btnAgree.click(function(){
-    alert('SPA! 10-timer-button task!');
+    alert('SPA!');
   });
 
 });
