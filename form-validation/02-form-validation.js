@@ -9,9 +9,9 @@ function h(e) {
   var t = $(e)
   , a = $(e + "-validate")
   , l = $(e).attr("data-label");
-return "" === t.val() ? (a.html(l + "不能为空！"),
+return "" === t.val() ? (a.html(l + "不能为空值"),
   t.select(),
-  !1) : /^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test(t.val()) ? window.Number(t.val()) < 0 ? (a.html(l + "必须大于零"),
+  !1) : /^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test(t.val()) ? window.Number(t.val()) < 0 ? (a.html(l + "必须是正数"),
     t.select(),
     !1) : (a.html(""),
       !0) : (a.html(l + "必须是数值"),
