@@ -1,5 +1,5 @@
 $(function(){
-  var n = 6;
+  var n = 10;
   var $btnAgree = $('input[type="button"]');
 
   var timer = window.setInterval(function(){

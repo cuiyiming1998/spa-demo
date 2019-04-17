@@ -2,43 +2,35 @@ $(function(){
     var xData=[],
         yData=[];
 
-for(var p=0;p<=1;p+=0.1){
-  xData.push(p);
-  yData.push(h(p));
-
-}
-
-function h(p){
-  if(p == 0) return 0;
-  return -1 * p * Math.log2(p) - (1-p) * Math.log2(1-p);
-}
-
-
-    var myChart = echarts.init($('.main')[0]);
-
-    var option = {
-      title: {
-        text: '二进熵函数曲线',  // 大标题
-        subtext: '',    // 类似于副标题
-        x: 'center'   // 标题位置 居中
-      },
-      tooltip: {},
-      legend: { // 图例组件
-        data:['二进熵']
-
-      },
-      xAxis: {
-        data:xData
-      },
-      yAxis: {},
-        series: [{
-        name: '二进熵',
-        type: 'line',
-        sm0oth:true,
-        data:yData
-      }]
-
-    };
+        for(var i = 0; i <= 1; i += 0.1) {
+          xData.push(roundFractional(i, 1));
+          yData.push(roundFractional(h(i), 2));
+        }
+      
+        var myChart = echarts.init($('.main').get(0));
+      
+        var option = {
+          title: {
+            text: '二进熵函数曲线'
+          },
+          tooltip: {},
+          legend: {
+            data:['信息量']
+          },
+          xAxis: {
+            data: xData
+          },
+          yAxis: {},
+          series: [{
+            name: '信息量',
+            type: 'line',
+            smooth: 'true',
+            data: yData
+          }]
+        };
+      
+        myChart.setOption(option);
+      
 
     myChart.setOption(option);
 

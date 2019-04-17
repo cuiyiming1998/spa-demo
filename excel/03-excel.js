@@ -1,4 +1,3 @@
-// Handsontable是一个类似excel的表格编辑器
 
 $(function() {
   var e = $(".main");
